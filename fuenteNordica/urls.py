@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from fuenteNordica import settings, static
 
 from fuenteNordicaApp.views import renderAbout, renderCatalogo, renderClub, renderContacto, renderInicio
 
@@ -27,3 +28,6 @@ urlpatterns = [
     path('about/', renderAbout),
     path('contacto/', renderContacto),
 ]
+
+urlpatterns += static (settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+urlpatterns += static (settings.STATIC_URL, document_root=settings.STATIC_ROOT)
