@@ -21,13 +21,13 @@ from django.conf import settings
 from fuenteNordicaApp.views import renderAbout, renderCatalogo, renderClub, renderContacto, renderInicio
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin', admin.site.urls),
     path('', renderInicio),
-    path('inicio/', renderInicio),
-    path('catalogo/', renderCatalogo),
-    path('club/', renderClub),
-    path('about/', renderAbout),
-    path('contacto/', renderContacto),
+    path('inicio', renderInicio),
+    path('catalogo', renderCatalogo),
+    path('club', renderClub),
+    path('about', renderAbout),
+    path('contacto', renderContacto),
 ]
 
 urlpatterns += static (settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
